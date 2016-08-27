@@ -1,0 +1,77 @@
+Job:
+    Status: [Q]uote|[J]ob|[A]rchived
+    Client:Contact
+    CreatedDate:
+    ArrivalDate:
+    DepartureDate:
+
+    Pax:
+        Adults
+        Children
+        Students
+        Guides/Drivers
+        TotalPaxOnTour
+        TotalPayingPaxOnTour
+
+    Pax: 
+        Count
+        Twins
+        Singles
+        Multiple      
+
+Intinerary:
+    Day:
+    Date: (ArrivalDate + Day -1 )
+    Description:string
+    Costs:Cost
+
+Invoice:
+    Reference
+    Status
+    Items
+
+Contact:
+    Name
+    Email
+    Organisation (opt)
+    Telephone
+
+Organisation:
+    Name
+    Address
+
+Accommodation:
+    Hotel:Organisation
+    Contact
+    TwinRooms:AccommodationRoom
+    SingleRooms:AccommodationRoom
+    MultipleOccupancyRooms:AccommodationRoom
+    
+AccommodationRoom:
+    Type
+    CostPerRoom
+    NumberOfPax
+    NumberOfRooms
+    NumberOfNights
+    TotalCost                                   CostPerRoom * NumberOfRooms * NumberOfNights
+    CostPerPerson                           TotalCost/NumberOfPax
+
+
+
+SharedCost:
+    Supplier:Organisation
+    Contact
+    NumberOfDays
+    Units
+    UnitCost
+    TotalCost
+
+Opposite of a SharedCost: (e.g. admissions, theatre tix, oyster cards, &c)
+Should be capable of being derived in the same way as accommodation
+?    Supplier:Organisation
+?    Contact
+    NumberOfPax
+    Name
+    NumberOfDays
+    UnitCost
+    TotalCost
