@@ -81,3 +81,11 @@ Passenger
     Insurance
     MedicalDetails
     DietaryRequirements
+
+* Need multiple quotes per spec Job
+* Need feature room behaviour for Accommodation
+
+Authentication (Auth0?)
+Mongo backend (or CouchDb?)
+NancyFx server w/authentication
+TypeScript serialisation
