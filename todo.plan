@@ -89,3 +89,26 @@ Authentication (Auth0?)
 Mongo backend (or CouchDb?)
 NancyFx server w/authentication
 TypeScript serialisation
+
+Pages
+=====
+
+Dashboard (Home) 
+    Check for pending tasks (payments/billing/confirmations/jobs)
+    List of recently-accessed quotes
+    Search functionality by customer/job/reference
+
+/ "Dashboard"
+    /quote "All quotes, sort by recently accessed/added?"
+        /{reference} "Specific quote"
+    /job  "All jobs, plus quotes within each job"
+        /{reference} "Specific job"
+            /pax "all pax on specific job"
+                /{id} "specific person"
+    /reminder "all forthcoming reminder events"
+        /{id} "specific reminder"
+    /organisation "all organisations list"
+        /{id} "specific organisation"
+            /contact "listing all contacts registered"
+                /{id} "specific contact"
+            /job "listing all jobs involving a specific organisation" 
