@@ -66,8 +66,7 @@ SharedCost:
     UnitCost
     TotalCost
 
-Opposite of a SharedCost: (e.g. admissions, theatre tix, oyster cards, &c)
-Should be capable of being derived in the same way as accommodation
+IndividualCost: (e.g. admissions, theatre tix, oyster cards, &c)
 ?    Supplier:Organisation
 ?    Contact
     NumberOfPax
@@ -75,3 +74,10 @@ Should be capable of being derived in the same way as accommodation
     NumberOfDays
     UnitCost
     TotalCost
+
+Passenger
+    Name
+    Contact
+    Insurance
+    MedicalDetails
+    DietaryRequirements
