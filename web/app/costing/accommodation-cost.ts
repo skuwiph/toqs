@@ -1,15 +1,22 @@
 import { Cost } from './cost';
 
+export enum RoomType {
+    Single = 1,
+    Double = 2,
+    Twin = 3,
+    MultipleOccupancy = 4
+};
+
 // TODO(ian):handle feature rooms
 export class AccommodationCost extends Cost {
-    // type: 1 - Twin, 2- Double, 3- MultipleOccupancy
-    type:number;               
+    // type: 1 - Single, 2- Double, 3- Twin, 4- MultipleOccupancy
+    type:RoomType;               
     numberPax:number;
     numberOfRooms:number;
     numberOfNights:number;
     roomCost:number;
 
-    constructor(public name:string, type:number, numberPax:number, numberOfRooms:number, numberOfNights:number, roomCost:number){
+    constructor(public name:string, type:RoomType, numberPax:number, numberOfRooms:number, numberOfNights:number, roomCost:number){
         super(name);
         this.type = type;
         this.numberPax = numberPax;
@@ -19,6 +26,6 @@ export class AccommodationCost extends Cost {
     }
 
     totalCost(): number {
-        return this.roomCost * this.numberPax * this.numberOfRooms * this.numberOfNights;
+        return this.roomCost * this.numberOfRooms * this.numberOfNights;
     }
 }

@@ -5,6 +5,14 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var cost_1 = require('./cost');
+(function (RoomType) {
+    RoomType[RoomType["Single"] = 1] = "Single";
+    RoomType[RoomType["Double"] = 2] = "Double";
+    RoomType[RoomType["Twin"] = 3] = "Twin";
+    RoomType[RoomType["MultipleOccupancy"] = 4] = "MultipleOccupancy";
+})(exports.RoomType || (exports.RoomType = {}));
+var RoomType = exports.RoomType;
+;
 // TODO(ian):handle feature rooms
 var AccommodationCost = (function (_super) {
     __extends(AccommodationCost, _super);
@@ -18,7 +26,7 @@ var AccommodationCost = (function (_super) {
         this.roomCost = roomCost;
     }
     AccommodationCost.prototype.totalCost = function () {
-        return this.roomCost * this.numberPax * this.numberOfRooms * this.numberOfNights;
+        return this.roomCost * this.numberOfRooms * this.numberOfNights;
     };
     return AccommodationCost;
 }(cost_1.Cost));
