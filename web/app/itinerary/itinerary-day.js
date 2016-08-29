@@ -1,7 +1,7 @@
 "use strict";
+//import * as moment from 'moment/moment';
 var ItineraryDay = (function () {
-    // cost per day
-    // Day number (1 - max)
+    // Day number (0- max); when displaying, add one
     function ItineraryDay(day) {
         this.day = day;
         this.costs = new Array();
@@ -9,4 +9,4 @@ var ItineraryDay = (function () {
     return ItineraryDay;
 }());
 exports.ItineraryDay = ItineraryDay;
-//# sourceMappingURL=intinerary-day.js.map
+//# sourceMappingURL=itinerary-day.js.map
